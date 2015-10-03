@@ -1,0 +1,19 @@
+{
+  "name": "superadmin",
+  "version": "0.0.1",
+  "authors": [
+    "Sauganth Vijayappan <sauganthv@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "requirejs": "*",
+    "underscore": "*",
+    "backbone": "*",
+    "mustache": "*",
+    "bootstrap": "*",
+    "backgrid": "*"
+  },
+  "resolutions": {
+    "underscore": "1.8.3"
+  }
+}

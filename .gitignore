@@ -1,0 +1,6 @@
+.DS_Store
+staging
+dist
+src/js/config.js
+node_modules
+src/vendor

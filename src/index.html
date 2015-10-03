@@ -1,0 +1,50 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>
+        <meta charset="utf-8">
+        <meta property="og:title" content="{{pkg.title}}" />
+        <meta property="og:site_name" content="{{pkg.title}}" />
+        <meta property="og:description" name="description" content="{{pkg.description}}" />
+        <title>{{title}}</title>
+
+        <link rel="icon" href="favicon.ico">
+        {{#files.stylesheets}}
+        <link href="{{{src}}}" rel="stylesheet">
+        {{/files.stylesheets}}
+
+        <!-- Vendor CSS -->
+        <link href="/js/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/js/lib/backgrid/lib/backgrid.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">{{title}}</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div id="sidebar" class="col-sm-3 col-md-2 sidebar"></div>
+                <div id="page" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                    <h1>Hello World</h1>
+                    <blockquote>
+                        <p>The more you find out about the world, the more opportunities there are to laugh at it.</p>
+                        <footer>Bill Nye</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates -->
+        <script src="{{{files.templates}}}" type="text/javascript"></script>
+
+        <!-- Require -->
+        <script data-main="/js/main" src="/js/lib/requirejs/require.js"></script>
+
+    </body>
+</html>  
