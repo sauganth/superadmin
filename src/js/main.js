@@ -39,9 +39,10 @@ require.config(
 var Superadmin;
 
 require(  
-    ['backbone', 'bootstrap'],
-    function(Backbone, bootstrap)
+    ['backbone', 'bootstrap', 'superadmin'],
+    function(Backbone, bootstrap, sam)
     {   
         // Start
+        sam.activate();
     }
 );
