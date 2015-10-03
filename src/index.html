@@ -1,20 +1,20 @@
 <!DOCTYPE html>  
 <html lang="en">  
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <meta property="og:title" content="{{pkg.title}}" />
         <meta property="og:site_name" content="{{pkg.title}}" />
-        <meta property="og:description" name="description" content="{{pkg.description}}" />
+        <meta property="og:description" data-name="description" content="{{pkg.description}}" />
         <title>{{title}}</title>
 
-        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="favicon.ico" />
         {{#files.stylesheets}}
-        <link href="{{{src}}}" rel="stylesheet">
+        <link href="{{{src}}}" rel="stylesheet" />
         {{/files.stylesheets}}
 
         <!-- Vendor CSS -->
-        <link href="/js/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/js/lib/backgrid/lib/backgrid.css" rel="stylesheet">
+        <link href="/js/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/js/lib/backgrid/lib/backgrid.css" rel="stylesheet" />
     </head>
 
     <body>
