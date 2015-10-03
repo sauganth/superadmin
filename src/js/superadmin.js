@@ -1,5 +1,5 @@
 define(  
-    ['backbone', 'Router', 'Session'],
+    ['backbone', 'router', 'session'],
     function (Backbone, Router, Session)
     {
                 var Superadmin = {
