@@ -3,7 +3,7 @@
  */
 require.config(  
 {
-    baseUrl: 'http://localhost:8080/superadmin/js/',
+    baseUrl: 'js/',
     paths: 
     {
         'jquery': 'lib/jquery/jquery',
@@ -42,7 +42,8 @@ require(
     ['backbone', 'bootstrap', 'superadmin'],
     function(Backbone, bootstrap, sam)
     {   
-        // Start
+        // Start this
+        
         sam.activate();
     }
 );
