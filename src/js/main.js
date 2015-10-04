@@ -3,7 +3,7 @@
  */
 require.config(  
 {
-    baseUrl: '/js/',
+    baseUrl: 'http://localhost:8080/superadmin/js/',
     paths: 
     {
         'jquery': 'lib/jquery/jquery',

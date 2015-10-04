@@ -1,38 +1,42 @@
 {
-    "name": "Project-superadmin",
-    "version": "0.0.1",
-    "title" : "Project Superadmin",
-    "description": "Superadmin application using Grunt, Backbone.js & Require.js",
-    "homepage": "",
-    "bugs": "",
-    "keywords": [],
-    "private": true,
-    "contributors": [
-        "Sauganth Vijayappan <sauganthv@gmail.com>"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sauganth/superadmin"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "expect.js": "*",
-        "grunt-notify": "*",
-        "grunt-newer": "*",
-        "load-grunt-tasks": "*",
-        "grunt-contrib-jshint": "*",
-        "grunt-contrib-clean": "*",
-        "grunt-mustache": "*",
-        "grunt-mustache-render": "*",
-        "grunt-contrib-cssmin": "*",
-        "grunt-contrib-copy": "*",
-        "grunt-concurrent": "*",
-        "grunt-contrib-watch": "*"
-    },
-    "scripts": {
-        "initiate": "npm install; bower install; grunt staging; grunt watcher",
-        "watch": "grunt watcher",
-        "stage": "grunt staging",
-        "release": "bower update; grunt release"
-    }
+  "name": "Project-superadmin",
+  "version": "0.0.1",
+  "title": "Project Superadmin",
+  "description": "Superadmin application using Grunt, Backbone.js & Require.js",
+  "homepage": "",
+  "bugs": "",
+  "keywords": [],
+  "private": true,
+  "contributors": [
+    "Sauganth Vijayappan <sauganthv@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sauganth/superadmin"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "expect.js": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-mustache": "*",
+    "grunt-mustache-render": "*",
+    "grunt-newer": "*",
+    "grunt-notify": "*",
+    "grunt-tomcat-deploy": "*",
+    "grunt-war": "*",
+    "grunt-zip": "^0.17.1",
+    "load-grunt-tasks": "*"
+  },
+  "scripts": {
+    "initiate": "npm install; bower install; grunt staging; grunt watcher",
+    "watch": "grunt watcher",
+    "stage": "grunt staging",
+    "release": "bower update; grunt release",
+    "deploy": "bower update; grunt release; grunt deploy"
+  }
 }

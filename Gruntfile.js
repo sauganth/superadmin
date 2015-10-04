@@ -44,7 +44,7 @@ module.exports = function (grunt)
                         files: {
                             stylesheets: grunt.file.expand({cwd: 'src'}, 'css/**/*.css').map(function(path){ return {src: '/' + path}; }),
                             scripts: grunt.file.expand({cwd: 'src'}, 'js/**/*.js').map(function(path){ return {src: '/' + path}; }),
-                            templates: '/js/templates.js'
+                            templates: 'js/templates.js'
                         }
                     }
                 }]
@@ -87,7 +87,7 @@ module.exports = function (grunt)
         copy: {
             staging: {
                 files: [
-                    {expand: true, cwd: '<%= dirs.source %>', src: ['*.json','*.txt','*.ico','images/**','css/**','js/**','!js/**-default.js'], dest: '<%= dirs.staging %>/', filter: 'isFile'},
+                    {expand: true, cwd: '<%= dirs.source %>', src: ['*.json','*.txt','*.ico','images/**','css/**','js/**','!js/**-default.js', 'WEB-INF/web.xml'], dest: '<%= dirs.staging %>/', filter: 'isFile'},
                     {expand: true, cwd: '<%= dirs.source %>/vendor', src: ['*/*.js','*/*.css','*/*.png','*/dist/**','*/lib/**',"!**/Gruntfile.js"], dest: '<%= dirs.staging %>/js/lib'}
                 ]
             },
@@ -130,11 +130,44 @@ module.exports = function (grunt)
             options: {cwd: '<%= dirs.source %>'},
             files: ['*.html', '*.js','css/**/*.css','js/**/*.js','templates/**/*.mustache'],
             tasks: ['concurrent:watch']
+        },
+                              
+      /*
+       * Build a WAR (web archive) without Maven or the JVM installed.
+       */
+      war: {
+        target: {
+          options: {
+            war_dist_folder: '<%= dirs.staging %>',
+            war_name: 'superadmin'
+          },
+          files: [
+            {
+              expand: true,
+              cwd: '<%= dirs.staging %>',
+              src: ['**'],
+              dest: ''
+            }
+          ]
         }
+      },
+      
+      tomcat_deploy: {
+        host: 'localhost',
+        login: 'xxxxx',
+        password: 'yyyyy',
+        path: '/superadmin',
+        port: '8080',
+        dist: 'staging',
+        deploy: '/manager/text/deploy',
+        undeploy: '/manager/text/undeploy'
+      }
+      
     });
 
     // Register tasks
     grunt.registerTask('staging', ['jshint:source', 'clean:staging', 'concurrent:staging']);
     grunt.registerTask('release', ['jshint:source', 'clean:release', 'concurrent:release']);
     grunt.registerTask('watcher', ['watch']);
+    grunt.registerTask('deploy', ['staging', 'war']);
 };
