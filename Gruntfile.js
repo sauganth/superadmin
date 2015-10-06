@@ -154,11 +154,11 @@ module.exports = function (grunt)
       
       tomcat_deploy: {
         host: 'localhost',
-        login: 'xxxxx',
-        password: 'yyyyy',
+        login: 'admin',
+        password: 'admin',
         path: '/superadmin',
         port: '8080',
-        dist: 'staging',
+        war: 'staging/superadmin.war',
         deploy: '/manager/text/deploy',
         undeploy: '/manager/text/undeploy'
       }
@@ -169,5 +169,6 @@ module.exports = function (grunt)
     grunt.registerTask('staging', ['jshint:source', 'clean:staging', 'concurrent:staging']);
     grunt.registerTask('release', ['jshint:source', 'clean:release', 'concurrent:release']);
     grunt.registerTask('watcher', ['watch']);
-    grunt.registerTask('deploy', ['staging', 'war']);
+    grunt.registerTask('genwar', ['staging', 'war']);
+    grunt.registerTask('deploy', ['genwar', 'tomcat_deploy']);
 };
